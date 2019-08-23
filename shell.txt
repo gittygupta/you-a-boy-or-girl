@@ -1,0 +1,21 @@
+# Raw file to run on scrapy shell.
+# Its not a program
+
+>>> import scrapy
+>>> import csv
+>>> questions_list = []
+>>>
+>>> for i in range(1, 1000):
+...	     url = "https://old.reddit.com/r/AskMen/?count=" + str(i) + "&after=t3_cu262q"
+...	     fetch(url)
+...	     question = response.xpath('//p[@class="title"]/a[@data-event-action="title"]/text()').extract_first()
+...	     questions_list.append(question)
+>>> question_tags = []
+>>> for i in range(0, len(questions_list)):
+...      for question in questions_list[i]:
+...            question_tags.append(question)
+>>>
+>>> csvfile = "data.csv"
+>>> with open(csvfile, "a", newline = '') as fp:
+...      wr = csv.writer(fp, dialect = 'excel')
+...      wr.writerow(question_tags)
