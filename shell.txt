@@ -8,7 +8,7 @@
 >>> for i in range(1, 1000):
 ...	     url = "https://old.reddit.com/r/AskMen/?count=" + str(i) + "&after=t3_cu262q"
 ...	     fetch(url)
-...	     question = response.xpath('//p[@class="title"]/a[@data-event-action="title"]/text()').extract_first()
+...	     question = response.xpath('//p[@class="title"]/a[@data-event-action="title"]/text()').extract()
 ...	     questions_list.append(question)
 >>> question_tags = []
 >>> for i in range(0, len(questions_list)):
