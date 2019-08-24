@@ -8,7 +8,7 @@
 >>> for i in range(1, 801):
 ...	     url = "https://www.askmen.com/answers/page/" + str(i)
 ...	     fetch(url)
-...	     question = response.xpath('//p[@class="title"]/a[@data-event-action="title"]/text()').extract()
+...	     question = response.xpath('//h3[@itemprop="name"]/a/text()').extract()
 ...	     questions_list.append(question)
 >>> question_tags = []
 >>> for i in range(0, len(questions_list)):
