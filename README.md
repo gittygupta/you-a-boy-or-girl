@@ -1,3 +1,4 @@
+# Regarding Reddit's API
 praw can traverse atmost 1000 posts (Reddit's request limit).
 
 To bypass that limit, pushshift can be used. But, AFAIK (after reading the doc - https://github.com/pushshift/api), it appears it can be
