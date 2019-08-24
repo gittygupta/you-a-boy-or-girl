@@ -5,8 +5,8 @@
 >>> import csv
 >>> questions_list = []
 >>>
->>> for i in range(1, 1000):
-...	     url = "https://old.reddit.com/r/AskMen/?count=" + str(i) + "&after=t3_cu262q"
+>>> for i in range(1, 801):
+...	     url = "https://www.askmen.com/answers/page/" + str(i)
 ...	     fetch(url)
 ...	     question = response.xpath('//p[@class="title"]/a[@data-event-action="title"]/text()').extract()
 ...	     questions_list.append(question)
@@ -16,6 +16,7 @@
 ...            question_tags.append(question)
 >>>
 >>> csvfile = "data.csv"
->>> with open(csvfile, "a", newline = '') as fp:
+>>> import io
+>>> with io.open(csvfile, "a", newline = '', encoding = "utf-8") as fp:
 ...      wr = csv.writer(fp, dialect = 'excel')
 ...      wr.writerow(question_tags)
