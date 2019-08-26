@@ -9,14 +9,10 @@
 ...	     url = "https://www.askmen.com/answers/page/" + str(i)
 ...	     fetch(url)
 ...	     question = response.xpath('//h3[@itemprop="name"]/a/text()').extract()
-...	     questions_list.append(question)
->>> question_tags = []
->>> for i in range(0, len(questions_list)):
-...      for question in questions_list[i]:
-...            question_tags.append(question)
+...	     questions_list += question
 >>>
 >>> csvfile = "data.csv"
 >>> import io
 >>> with io.open(csvfile, "a", newline = '', encoding = "utf-8") as fp:
 ...      wr = csv.writer(fp, dialect = 'excel')
-...      wr.writerow(question_tags)
+...      wr.writerow(questions_list)
