@@ -95,7 +95,7 @@ classifier = Sequential()
 classifier.add(Dense(activation="relu", input_dim=6200, units=11000, kernel_initializer="uniform"))
 
 # Adding the 2nd hidden layer
-classifier.add(Dense(activation="relu", units=6, kernel_initializer="uniform"))
+classifier.add(Dense(activation="relu", units=6000, kernel_initializer="uniform"))
 
 # Adding the output layer
 classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
